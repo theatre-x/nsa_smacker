@@ -87,6 +87,8 @@ echo "127.0.0.1       www.plus.google.com" >> /etc/hosts && echo "Blocking 'www.
 echo "127.0.0.1       www.google-analytics.com" >> /etc/hosts && echo "Blocking 'www.google-analytics' ... Done"
 echo "127.0.0.1       google-analytics.com" >> /etc/hosts && echo "Blocking 'google-analytics.com' ... Done"
 echo "127.0.0.1       ssl.google-analytics.com" >> /etc/hosts && echo "Blocking 'ssl.google-analytics.com' ... Done"
+echo "127.0.0.1	      accounts.google.com" >> /etc/hosts && echo "Blocking 'accounts.google.com' ... Done"
+echo" 127.0.0.1       https://accounts.google.com" >> /etc/hosts && echo "Blocking 'https://accounts.google.com' ... Done"
 
 }
 
