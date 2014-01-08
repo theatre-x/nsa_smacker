@@ -90,6 +90,14 @@ echo "127.0.0.1       ssl.google-analytics.com" >> /etc/hosts && echo "Blocking 
 
 }
 
+function delete_fb {
+
+echo "Opening permanent delete URL ... "
+firefox https://www.facebook.com/help/delete_account;
+clear
+
+}
+
 function mem_clean {
 	echo "Note: You must run NSA Smacker in a root shell to use this (Try su - OR sudo bash)";
 
@@ -169,6 +177,7 @@ function reboot {
 select choice in \
 	"Block Facebook Domains" \
 	"Block Google Domains" \
+	"Delete Faceook Account" \
 	"Clean Memory" \
 	"Update Apt-based System" \
 	"About" \
@@ -187,6 +196,9 @@ do
 	;;
 	"Block Google Domains")
 	block_google;
+	;;
+	"Delete Facebook Account")
+	delete_fb;
 	;;
 	"Clean Memory")
 	mem_clean;
