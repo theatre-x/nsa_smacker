@@ -88,7 +88,8 @@ echo "127.0.0.1       www.google-analytics.com" >> /etc/hosts && echo "Blocking 
 echo "127.0.0.1       google-analytics.com" >> /etc/hosts && echo "Blocking 'google-analytics.com' ... Done"
 echo "127.0.0.1       ssl.google-analytics.com" >> /etc/hosts && echo "Blocking 'ssl.google-analytics.com' ... Done"
 echo "127.0.0.1	      accounts.google.com" >> /etc/hosts && echo "Blocking 'accounts.google.com' ... Done"
-echo" 127.0.0.1       https://accounts.google.com" >> /etc/hosts && echo "Blocking 'https://accounts.google.com' ... Done"
+echo "127.0.0.1       https://accounts.google.com" >> /etc/hosts && echo "Blocking 'https://accounts.google.com' ... Done"
+echo "127.0.0.1       goo.gl" >> /etc/hosts && echo "Blocking 'goo.gl' ... Done" #seems to work for http and https as well...#
 
 }
 
