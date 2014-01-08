@@ -49,7 +49,7 @@ echo "127.0.0.1       http://www.facebook.com" >> /etc/hosts && echo "Blocking '
 echo "127.0.0.1       facebook.com" >> /etc/hosts && echo "Blocking 'facebook.com' ... Done"
 echo "127.0.0.1       www.facebook.com" >> /etc/hosts && echo "Blocking 'www.facebook.com' ... Done"
 echo "127.0.0.1	      https://m.facebook.com" >> /etc/hosts && echo "Blocking 'https://m.facebook.com' ... Done"
-echo "127.0.0.1	      http://m.facebook.com" >> /etc/hosts && echo "Blocking 'http://m.facebook.com' ... Done"
+echo "127.0.0.1       http://m.facebook.com" >> /etc/hosts && echo "Blocking 'http://m.facebook.com' ... Done"
 echo "127.0.0.1       https://www.m.facebook.com" >> /etc/hosts && echo "Blocking 'https://www.m.facebook.com' ... Done"
 echo "127.0.0.1       http://www.m.facebook.com" >> /etc/hosts && echo "Blocking 'http://www.m.facebook.com' ... Done"
 echo "127.0.0.1       m.facebook.com" >> /etc/hosts && echo "Blocking 'm.facebook.com' ... Done"
