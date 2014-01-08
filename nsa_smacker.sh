@@ -62,7 +62,7 @@ function block_google {
 echo "Blocking all Google domains ... "
 
 
-iptables -A INPUT -s https://encrypted.google.com -j DROP && echo "Chicken Dinner!"
+iptables -A INPUT -s https://encrypted.google.com -j DROP && echo "Blocking on Firewall ... Done"
 
 echo "127.0.0.1       https://encrypted.google.com" >> /etc/hosts && echo "Blocking 'https://encrypted.google.com ... Done"
 echo "127.0.0.1       https://www.encrypted.google.com" >> /etc/hosts && echo "Blocking 'https://www.encrypted.google.com' ... Done"
