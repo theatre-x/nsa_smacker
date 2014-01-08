@@ -91,7 +91,7 @@ echo "127.0.0.1       ssl.google-analytics.com" >> /etc/hosts && echo "Blocking 
 }
 
 function mem_clean {
-	echo "Note: You must run GISAH in a root shell to use this (Try su - OR sudo bash)";
+	echo "Note: You must run NSA Smacker in a root shell to use this (Try su - OR sudo bash)";
 
 echo "Cleaning up memory..."
 echo 3 > /proc/sys/vm/drop_caches
