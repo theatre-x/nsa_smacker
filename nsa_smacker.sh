@@ -128,11 +128,16 @@ sudo ip link set dev $interface down
 echo "Okay, Interface is down. Now, choose a new MAC address."
 echo "Should be in the form XX:XX:XX:XX:XX:XX"
 read MAC
-sudo ip link set dev address $MAC
+sudo ip link set dev $interface address $MAC
 sudo ip link set dev $interface up
 echo "Okay, Interface should be back up now."
 echo "The next line should show your new MAC address."
 sudo ip link show $interface
+echo "============================"
+echo "good? Now you may need to go to your network settings, turn off your wi-fi and turn it back on."
+echo "test to see if you have a connection first though."
+echo "Happy Hacking!"
+echo "============================"
 
 }
 
