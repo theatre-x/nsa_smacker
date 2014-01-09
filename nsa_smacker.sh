@@ -91,6 +91,19 @@ echo "127.0.0.1	      accounts.google.com" >> /etc/hosts && echo "Blocking 'acco
 echo "127.0.0.1       https://accounts.google.com" >> /etc/hosts && echo "Blocking 'https://accounts.google.com' ... Done"
 echo "127.0.0.1       goo.gl" >> /etc/hosts && echo "Blocking 'goo.gl' ... Done" #seems to work for http and https as well...#
 echo "127.0.0.1       googletagmanager.com" >> /etc/hosts && echo "Block 'googletagmanager' ... Done"
+echo "127.0.0.1	      maps.google.com" >> /etc/hosts && echo "Blocking 'maps.google.com' ... Done"
+echo "127.0.0.1       youtube.com" >> /etc/hosts && echo "Blocking 'youtube.com' ... Done"
+echo "127.0.0.1       youtu.be" >> /etc/hosts && echo "Blocking 'youtu.be' ... Done"
+
+
+}
+
+function misc_block {
+
+echo "This will block domains by Microsoft, Apple, and others. This is meant for random domains that are also spied on."
+
+echo "127.0.0.1	      microsoft.com" >> /etc/hosts && echo "Blocking 'Microsoft.com' ... Done"
+echo "127.0.0.1	      apple.com" >> /etc/hosts && echo "Blocking 'apple.com' ... Done"
 
 }
 
@@ -141,7 +154,7 @@ echo "============================"
 
 }
 
-function deb_sys_update {
+function sys_update {
 	if [ -f /usr/bin/apt-get ]
 	then
 	echo "=============================="
@@ -158,7 +171,19 @@ function deb_sys_update {
 	sudo apt-get dist-upgrade
 
 	else
-	echo "Apt-get does not exist you fool!"
+	echo "Not an APT-based system ..."
+fi
+
+	if [ -f /usr/bin/yum ]
+	then
+	echo "=========================="
+	echo "**** Running updates *****"
+	echo "=========================="
+	su - yum update
+	
+	else
+	echo "Not a YUM based system ..."
+
 fi
 
 }
@@ -169,7 +194,7 @@ function about {
 
 echo "*******************************************************"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo   "NSA Smacker 0.0.2"
+echo   "NSA Smacker 0.0.3"
 echo   "NSA Smacker is meant to block domains very commonly monitored by the NSA, CIA, and others on a single GNU/Linux machine. It also does some other fancy shit."
 echo   "Copyright (C) 2014  Brandon Smith"
 echo   "This program is free software: you can redistribute it and/or modify"
@@ -212,10 +237,10 @@ function reboot {
 select choice in \
 	"Block Facebook Domains" \
 	"Block Google Domains" \
+	"Misc. Blocker" \
 	"Delete Faceook Account" \
 	"Clean Memory" \
-	"Spoof MAC Address" \
-	"Update Apt-based System" \
+	"Update System" \
 	"About" \
 	"Exit"\
 	"Shutdown" \
@@ -233,17 +258,17 @@ do
 	"Block Google Domains")
 	block_google;
 	;;
+	"Misc. Blocker")
+	misc_blocker;
+	;;
 	"Delete Facebook Account")
 	delete_fb;
 	;;
 	"Clean Memory")
 	mem_clean;
 	;;
-        "Spoof MAC Address")
-        MAC_spoof;
-        ;;
-	"Update Apt-based System")
-	deb_sys_update;
+	"Update System")
+	sys_update;
 	;;
 	"About")
 	about;
