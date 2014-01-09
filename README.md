@@ -17,6 +17,11 @@ How to run:
 - Run the program: ./nsa_smacker.sh
 
 
+How to undo blocks:
+
+Simply remove the domains you want to unblock from the "/etc/hosts" file.
+
+
 Notes:
 
 - Google resolve has yet to work if you are using HTTPS Everywhere in your browser. To block Google, first disable the rules for Google sites in HTTPS Everywhere which will prevent Google from working.
@@ -36,6 +41,14 @@ You can get the sauce (Source code) by either viewing the file in a text editor 
 Contributing:
 
 Right here: https://github.com/theatre-x/nsa_smacker
+
+
+Alternatives to sites blocked:
+
+Google Alternatives: ixQuick, Startpage, DuckDuckGo (Remember to use the HTTPS version)
+Gmail: Riseup, Open Mailbox
+Google +/Facebook: Diaspora*, Libertree
+YouTube: MediaGoblin
 
 
 Thanks for trying out NSA Smacker!
