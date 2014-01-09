@@ -114,26 +114,26 @@ function MAC_spoof {
 
 echo "this doesn't work yet. Sorry." #Comment out when the code works, obviously.
 
-#echo "This changes your MAC address to one of your choice. In order to use this, you must have iproute2 installed."
-#echo "##########"
-#echo "For Debian-based systems, (like Ubuntu) use 'sudo apt-get install iproute'."
-#echo "For Arch-based systems, use 'sudo pacman -S iproute2'."
-#echo "##########"
-#echo "What is the name of your wired/wireless interface? [HINT: you can find this with the 'ifconfig' command.]"
-#echo "The most common name for wireless interfaces is 'wlan0'." 
-#echo "On Arch-based systems, it is usually 'wlp2s0'. It's best to check."
-#read interface
-#sudo ip link show $interface
-#sudo ip link set dev $interface down
-#echo "Okay, Interface is down. Now, choose a new MAC address."
-#echo "Should be in the form XX:XX:XX:XX:XX:XX"
-#read MAC
-#sudo ip link set dev address $MAC
-#sudo ip link set dev $interface up
-#echo "Okay, Interface should be back up now."
-#echo "The next line should show your new MAC address."
-#sudo ip link show $interface
-#
+echo "This changes your MAC address to one of your choice. In order to use this, you must have iproute2 installed."
+echo "##########"
+echo "For Debian-based systems, (like Ubuntu) use 'sudo apt-get install iproute'."
+echo "For Arch-based systems, use 'sudo pacman -S iproute2'."
+echo "##########"
+echo "What is the name of your wired/wireless interface? [HINT: you can find this with the 'ifconfig' command.]"
+echo "The most common name for wireless interfaces is 'wlan0'." 
+echo "On Arch-based systems, it is usually 'wlp2s0'. It's best to check."
+read interface
+sudo ip link show $interface
+sudo ip link set dev $interface down
+echo "Okay, Interface is down. Now, choose a new MAC address."
+echo "Should be in the form XX:XX:XX:XX:XX:XX"
+read MAC
+sudo ip link set dev address $MAC
+sudo ip link set dev $interface up
+echo "Okay, Interface should be back up now."
+echo "The next line should show your new MAC address."
+sudo ip link show $interface
+
 }
 
 function deb_sys_update {
