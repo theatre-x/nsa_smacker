@@ -125,20 +125,22 @@ echo 3 > /proc/sys/vm/drop_caches
 
 function MAC_spoof {
 
-echo "this doesn't work yet. Sorry." #Comment out when the code works, obviously.
-
 echo "This changes your MAC address to one of your choice. In order to use this, you must have iproute2 installed."
 echo "##########"
 echo "For Debian-based systems, (like Ubuntu) use 'sudo apt-get install iproute'."
 echo "For Arch-based systems, use 'sudo pacman -S iproute2'."
 echo "##########"
-echo "What is the name of your wired/wireless interface? [HINT: you can find this with the 'ifconfig' command.]"
+echo "What is the name of your wired/wireless interface?"
+echo "[HINT: you can find this with the 'ifconfig' command.]"
 echo "The most common name for wireless interfaces is 'wlan0'." 
 echo "On Arch-based systems, it is usually 'wlp2s0'. It's best to check."
 read interface
 sudo ip link show $interface
 sudo ip link set dev $interface down
 echo "Okay, Interface is down. Now, choose a new MAC address."
+echo "I have generated a new, random MAC address here. If you want to use it, just copy and paste."
+printf 'Random MAC: %02x:%02x:%02x:%02x:%02x:%02x\n' $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256))
+echo "or you can set your own"
 echo "Should be in the form XX:XX:XX:XX:XX:XX"
 read MAC
 sudo ip link set dev $interface address $MAC
@@ -147,9 +149,13 @@ echo "Okay, Interface should be back up now."
 echo "The next line should show your new MAC address."
 sudo ip link show $interface
 echo "============================"
-echo "good? Now you may need to go to your network settings, turn off your wi-fi and turn it back on."
-echo "test to see if you have a connection first though."
-echo "Happy Hacking!"
+echo "*good? Now you may need to go"
+echo "*to your network settings,"
+echo "*turn off your wi-fi and turn"
+echo "*it back on. test to see if *" 
+echo "*you have a connection first*"
+echo "*though.                    *"
+echo "***Happy Hacking!***        *"
 echo "============================"
 
 }
