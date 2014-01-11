@@ -157,6 +157,8 @@ echo "*you have a connection first*"
 echo "*though.                    *"
 echo "***Happy Hacking!***        *"
 echo "============================"
+sudo ifconfig $interface down && sudo ifconfig $interface up
+
 
 }
 
@@ -246,6 +248,7 @@ select choice in \
 	"Misc. Blocker" \
 	"Delete Faceook Account" \
 	"Clean Memory" \
+	"MAC Spoofer" \
 	"Update System" \
 	"About" \
 	"Exit"\
@@ -272,6 +275,9 @@ do
 	;;
 	"Clean Memory")
 	mem_clean;
+	;;
+	"MAC Spoofer")
+	MAC_spoof;
 	;;
 	"Update System")
 	sys_update;
