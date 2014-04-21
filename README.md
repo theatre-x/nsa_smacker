@@ -3,7 +3,7 @@ nsa_smacker
 
 For the NSA Smacker program
 
-Aboutthe program and how it works:
+About the program and how it works:
 
 The purpose of this program is to prevent any connection to websites and servers that are commonly monitored by the NSA. This is achieved via adding entries of sites to the /etc/hosts file that resolve the sites back to yourself (127.0.0.1). This only effects the machine that the program is executed on and not the entire network.
 
