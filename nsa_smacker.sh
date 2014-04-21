@@ -102,7 +102,7 @@ echo "127.0.0.1 googletagmanager.com" >> /etc/hosts && echo "Block 'googletagman
 echo "127.0.0.1         maps.google.com" >> /etc/hosts && echo "Blocking 'maps.google.com' ... Done"
 echo "127.0.0.1 youtube.com" >> /etc/hosts && echo "Blocking 'youtube.com' ... Done"
 echo "127.0.0.1 youtu.be" >> /etc/hosts && echo "Blocking 'youtu.be' ... Done"
-
+echo "127.0.0.1 googlesyndication.com" >> /etc/hosts && echo "Blocking 'googlesyndication.com' ... Done"
 
 }
 
