@@ -368,7 +368,7 @@ function block {
 
 function execute_block {
 
-echo "127.0.0.1 $i www.$i" >> /etc/hosts && echo "Blocking '$i' ... Done"
+echo "127.0.0.1 $1 www.$1" >> /etc/hosts && echo "Blocking '$1' ... Done"
 
 }
 
