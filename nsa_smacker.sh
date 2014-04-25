@@ -411,7 +411,7 @@ case $1 in
         done
         ;;
         *)
-                echo "ERROR: '$1' is not a valid option in the block function";
+            echo "ERROR: '$1' is not a valid option in the block function";
 
         esac
 
