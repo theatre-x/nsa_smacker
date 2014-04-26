@@ -463,19 +463,19 @@ echo "[HINT: you can find this with the 'ifconfig' command.]"
 echo "The most common name for wireless interfaces is 'wlan0'."
 echo "On Arch-based systems, it is usually 'wlp2s0'. It's best to check."
 read interface
-sudo ip link show $interface
-sudo ip link set dev $interface down
+ip link show $interface
+ip link set dev $interface down
 echo "Okay, Interface is down. Now, choose a new MAC address."
 echo "I have generated a new, random MAC address here. If you want to use it, just copy and paste."
 printf 'Random MAC: %02x:%02x:%02x:%02x:%02x:%02x\n' $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256)) $((RANDOM%256))
 echo "or you can set your own"
 echo "Should be in the form XX:XX:XX:XX:XX:XX"
 read MAC
-sudo ip link set dev $interface address $MAC
-sudo ip link set dev $interface up
+ip link set dev $interface address $MAC
+ip link set dev $interface up
 echo "Okay, Interface should be back up now."
 echo "The next line should show your new MAC address."
-sudo ip link show $interface
+ip link show $interface
 echo "============================"
 echo "*good? Now you may need to go"
 echo "*to your network settings,"
@@ -485,7 +485,7 @@ echo "*you have a connection first*"
 echo "*though. *"
 echo "***Happy Hacking!*** *"
 echo "============================"
-sudo ifconfig $interface down && sudo ifconfig $interface up
+ifconfig $interface down && ifconfig $interface up
 
 
 }
@@ -496,15 +496,15 @@ function sys_update {
         echo "=============================="
         echo "**** Checking for updates ****"
         echo "=============================="
-        sudo apt-get update
+        apt-get update
         echo "=============================="
         echo "**** Starting upgrades ****"
         echo "=============================="
-        sudo apt-get upgrade
+        apt-get upgrade
         echo "==============================="
         echo "**** Starting Dist-Upgrade ****"
         echo "==============================="
-        sudo apt-get dist-upgrade
+        apt-get dist-upgrade
 
         else
         echo "Not an APT-based system ..."
@@ -515,7 +515,7 @@ fi
         echo "=========================="
         echo "**** Running updates *****"
         echo "=========================="
-        su - yum update
+        yum update
         
         else
         echo "Not a YUM based system ..."
@@ -527,7 +527,7 @@ fi
 	echo "========================="
 	echo "**** Running updates ****"
 	echo "========================="
-	sudo zypper update
+	zypper update
 
 	else
 	echo "Not a Zypper based system ..."
@@ -569,11 +569,11 @@ function end {
 }
 
 function shutdown {
-        sudo shutdown -h -P now; echo "Peace out!"
+        shutdown -h -P now; echo "Peace out!"
 }
 
 function reboot {
-    sudo reboot; echo "Peace!"
+    reboot; echo "Peace!"
 
 }
 
