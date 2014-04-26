@@ -534,6 +534,25 @@ fi
 
 fi
 
+    if [ -f /usr/bin/yaourt ]
+    then 
+    echo "========================="
+    echo "**** Running updates ****"
+    echo "========================="
+    yaourt -Syyua
+    
+    elif [ -f /usr/bin/pacman ]
+    then 
+    echo "========================="
+    echo "**** Running updates ****"
+    echo "========================="
+    pacman -Syyu
+
+    else
+    echo "Not an ArchLinux based system ..."
+fi
+
+
 }
 
 function about {
