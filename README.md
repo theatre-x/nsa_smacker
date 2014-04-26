@@ -17,6 +17,16 @@ How to run:
 - Run the program: ./nsa_smacker.sh
 
 
+
+
+
+WARNING: Do not run the "Delete Facebook Account" or "Visit Prism Break" options as root!!!
+
+
+
+
+
+
 How to undo blocks:
 
 Simply remove the domains you want to unblock from the "/etc/hosts" file.
