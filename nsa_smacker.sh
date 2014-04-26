@@ -33,86 +33,387 @@ echo "Running NSA Smacker on"
 uname -o
 
 # =================
+# Domain names
+# =================
+# The domain names are stored (alphabetically unless noted otherwise)
+# in arrays in 2nd level domain format; Other prefixes and such are
+# automatically generated with the `execute_block` function.
+
+nsa=(
+
+'nsa.gov'
+
+);
+
+facebook=(
+
+'acebooik.com'
+'a.ns.facebook.com'
+'b.ns.facebook.com'
+'facebook.com'
+'facebookcupid.com'
+'facebooklikebutton.net'
+'facebookperfectmatch.com'
+'ferabook.com'
+'m.facebook.com'
+'msgin.t.facebook.com'
+
+);
+
+google=(
+
+# Localized & regional domains (sorted alphabetically by country name)
+'google.com'
+'google.ac'
+'google.ad'
+'google.ae'
+'google.com.af'
+'google.com.ag'
+'google.com.ai'
+'google.al'
+'google.am'
+'google.co.ao'
+'google.com.ar'
+'google.as'
+'google.at'
+'google.com.au'
+'google.az'
+'google.ba'
+'google.com.bd'
+'google.be'
+'google.bf'
+'google.bg'
+'google.com.bh'
+'google.bi'
+'google.bj'
+'google.com.bn'
+'google.com.bo'
+'google.com.br'
+'google.bs'
+'google.bt'
+'google.co.bw'
+'google.by'
+'google.com.bz'
+'google.ca'
+'google.com.kh'
+'google.cc'
+'google.cd'
+'google.cf'
+'google.cat'
+'google.cg'
+'google.ch'
+'google.ci'
+'google.co.ck'
+'google.cl'
+'google.cm'
+'google.cn'
+'g.cn'
+'google.com.co'
+'google.co.cr'
+'google.com.cu'
+'google.cv'
+'google.com.cy'
+'google.cz'
+'google.de'
+'google.dj'
+'google.dk'
+'google.dm'
+'google.com.do'
+'google.dz'
+'google.com.ec'
+'google.ee'
+'google.com.eg'
+'google.es'
+'google.com.et'
+'google.fi'
+'google.com.fj'
+'google.fm'
+'google.fr'
+'google.ga'
+'google.ge'
+'google.gf'
+'google.gg'
+'google.com.gh'
+'google.com.gi'
+'google.gl'
+'google.gm'
+'google.gp'
+'google.gr'
+'google.com.gt'
+'google.gy'
+'google.com.hk'
+'google.hn'
+'google.hr'
+'google.ht'
+'google.hu'
+'google.co.id'
+'google.ir'
+'google.iq'
+'google.ie'
+'google.co.il'
+'google.im'
+'google.co.in'
+'google.io'
+'google.is'
+'google.it'
+'google.je'
+'google.com.jm'
+'google.jo'
+'google.co.jp'
+'google.co.ke'
+'google.ki'
+'google.kg'
+'google.co.kr'
+'google.com.kw'
+'google.kz'
+'google.la'
+'google.com.lb'
+'google.com.lc'
+'google.li'
+'google.lk'
+'google.co.ls'
+'google.lt'
+'google.lu'
+'google.lv'
+'google.com.ly'
+'google.co.ma'
+'google.md'
+'google.me'
+'google.mg'
+'google.mk'
+'google.ml'
+'google.com.mm'
+'google.mn'
+'google.ms'
+'google.com.mt'
+'google.mu'
+'google.mv'
+'google.mw'
+'google.com.mx'
+'google.com.my'
+'google.co.mz'
+'google.com.na'
+'google.ne'
+'google.com.nf'
+'google.com.ng'
+'google.com.ni'
+'google.nl'
+'google.no'
+'google.com.np'
+'google.nr'
+'google.nu'
+'google.co.nz'
+'google.com.om'
+'google.com.pa'
+'google.com.pe'
+'google.com.ph'
+'google.com.pk'
+'google.pl'
+'google.com.pg'
+'google.pn'
+'google.com.pr'
+'google.ps'
+'google.pt'
+'google.com.py'
+'google.com.qa'
+'google.ro'
+'google.rs'
+'google.ru'
+'google.rw'
+'google.com.sa'
+'google.com.sb'
+'google.sc'
+'google.se'
+'google.com.sg'
+'google.sh'
+'google.si'
+'google.sk'
+'google.com.sl'
+'google.sn'
+'google.sm'
+'google.so'
+'google.st'
+'google.com.sv'
+'google.td'
+'google.tg'
+'google.co.th'
+'google.com.tj'
+'google.tk'
+'google.tl'
+'google.tm'
+'google.to'
+'google.tn'
+'google.com.tn'
+'google.com.tr'
+'google.tt'
+'google.com.tw'
+'google.co.tz'
+'google.com.ua'
+'google.co.ug'
+'google.co.uk'
+'google.us'
+'google.com.uy'
+'google.co.uz'
+'google.com.vc'
+'google.co.ve'
+'google.vg'
+'google.co.vi'
+'google.com.vn'
+'google.vu'
+'google.ws'
+'google.co.za'
+'google.co.zm'
+'google.co.zw'
+
+# URL shortening & Non-localized URLs
+'1e100.net'
+'466453.com'
+'admob.com'
+'adsense.com'
+'adwords.com'
+'android.com'
+'blogger.com'
+'blogspot.com'
+'chromebook.com'
+'chrome.com'
+'chromium.org'
+'doubleclick.com'
+'feedburner.com'
+'froofle.com'
+'froogle.com'
+'g.co'
+'ggpht.com'
+'gmail.com'
+'gogle.com'
+'gogole.com'
+'googel.com'
+'googil.com'
+'goo.gl'
+'google-analytics.com'
+'googleanalytics.com'
+'googleapis.com'
+'googleapps.com'
+'googlearth.com'
+'googlebot.com'
+'googlecode.com'
+'googlecommerce.com'
+'googledrive.com'
+'googleearth.com'
+'googlemaps.com'
+'google.net'
+'google.org'
+'googlepagecreator.com'
+'googleratings.com'
+'googlescholar.com'
+'googlesource.com'
+'googlesyndication.com'
+'googletagmanager.com'
+'googleusercontent.com'
+'googlr.com'
+'goolge.com'
+'gooogle.com'
+'gstatic.com'
+'gtempaccount.com'
+'igoogle.com'
+'keyhole.com'
+'like.com'
+'orkut.com'
+'panoramio.com'
+'picasa.com'
+'sketchup.com'
+'urchin.com'
+'waze.com'
+'youtu.be'
+'youtube.com'
+'youtubeeducation.com'
+'ytimg.com'
+
+# Subdomains
+'accounts.google.com'
+'code.google.com'
+'encrypted.google.com'
+'maps.google.com'
+'ns1.google.com'
+'ns2.google.com'
+'ns3.google.com'
+'ns4.google.com'
+'plus.google.com'
+'translate.google.com'
+
+);
+
+misc=(
+
+'apple.com'
+'microsoft.com'
+
+);
+
+# =================
+# Meta categories
+# =================
+# Categories of categories ...
+
+# All domain names available.
+all=("${nsa[@]}" "${facebook[@]}" "${google[@]}" "${misc[@]}")
+
+
+# =================
 # Functions
 # =================
 
-function nsa_block {
+# Takes an array of domain names (passed from the user selection)
+# as an argument, and then blocks them.
+function block {
 
-echo "Blocking all NSA domains ... "
+function execute_block {
 
-echo "127.0.0.1	      nsa.gov" >> /etc/hosts && echo "Blocking 'nsa.gov' ... Done"
-
-}
-
-function block_facebook {
-
-echo "Blocking access to every domain of NSA loving dickheads have in every single combination possible..."
-
-echo "Blocking all Facebook domains ... "
-
-echo "127.0.0.1 https://facebook.com" >> /etc/hosts && echo "Blocking 'https://facebook.com' ... Done"
-echo "127.0.0.1 http://facebook.com" >> /etc/hosts && echo "Blocking 'http://facebook.com' ... Done"
-echo "127.0.0.1 https://www.facebook.com" >> /etc/hosts && echo "Blocking 'https://www.facebook.com' ... Done"
-echo "127.0.0.1 http://www.facebook.com" >> /etc/hosts && echo "Blocking 'http://www.facebook.com' ... Done"
-echo "127.0.0.1 facebook.com" >> /etc/hosts && echo "Blocking 'facebook.com' ... Done"
-echo "127.0.0.1 www.facebook.com" >> /etc/hosts && echo "Blocking 'www.facebook.com' ... Done"
-echo "127.0.0.1 https://m.facebook.com" >> /etc/hosts && echo "Blocking 'https://m.facebook.com' ... Done"
-echo "127.0.0.1 http://m.facebook.com" >> /etc/hosts && echo "Blocking 'http://m.facebook.com' ... Done"
-echo "127.0.0.1 https://www.m.facebook.com" >> /etc/hosts && echo "Blocking 'https://www.m.facebook.com' ... Done"
-echo "127.0.0.1 http://www.m.facebook.com" >> /etc/hosts && echo "Blocking 'http://www.m.facebook.com' ... Done"
-echo "127.0.0.1 m.facebook.com" >> /etc/hosts && echo "Blocking 'm.facebook.com' ... Done"
-echo "127.0.0.1 www.m.facebook.com" >> /etc/hosts && echo "Blocking 'www.m.facebook.com' ... Done"
+echo "127.0.0.1 $1 www.$1" >> /etc/hosts && echo "Blocking '$1' ... Done"
 
 }
 
-function block_google {
+case $1 in
+        all)
+        echo "Blocking all domains ... "
+        for i in "${all[@]}"
+        do
+            execute_block $i;
+        done
+        ;;
+        nsa)
+        echo "Blocking all NSA domains ... "
+        for i in "${nsa[@]}"
+        do
+            execute_block $i;
+        done
+        ;;
+        facebook)
+        echo "Blocking access to every domain of NSA loving dickheads have in every single combination possible..."
+        echo "Blocking all Facebook domains ... "
+        for i in "${facebook[@]}"
+        do
+            execute_block $i;
+        done
+        ;;
+        google)
+        echo "Blocking all Google domains ... "
+        for i in "${google[@]}"
+        do
+            execute_block $i;
+        done
+        ;;
+        misc)
+        echo "This will block domains by Microsoft, Apple, and others. This is meant for random domains that are also spied on."
+        echo "Blocking miscellaneous domains ... "
+        for i in "${misc[@]}"
+        do
+            execute_block $i;
+        done
+        ;;
+        *)
+            echo "ERROR: '$1' is not a valid option in the block function";
 
-echo "Blocking all Google domains ... "
-
-
-iptables -A INPUT -s https://encrypted.google.com -j DROP && echo "Blocking on Firewall ... Done"
-
-echo "127.0.0.1 https://encrypted.google.com" >> /etc/hosts && echo "Blocking 'https://encrypted.google.com ... Done"
-echo "127.0.0.1 https://www.encrypted.google.com" >> /etc/hosts && echo "Blocking 'https://www.encrypted.google.com' ... Done"
-echo "127.0.0.1         https://google.com" >> /etc/hosts && echo "Blocking 'https://google.com' ... Done"
-echo "127.0.0.1 http://google.com" >> /etc/hosts && echo "Blocking 'http://google.com' ... Done"
-echo "127.0.0.1 https://www.google.com" >> /etc/hosts && echo "Blocking 'https://www.google.com ... Done"
-echo "127.0.0.1 http://www.google.com" >> /etc/hosts && echo "Blocking 'http://www.google.com' ... Done"
-echo "127.0.0.1 google.com" >> /etc/hosts && echo "Blocking 'google.com' ... Done"
-echo "127.0.0.1 www.google.com" >> /etc/hosts && echo "Blocking 'www.google.com' ... Done"
-echo "127.0.0.1 https://gmail.com" >> /etc/hosts && echo "Blocking 'https://gmail.com' ... Done"
-echo "127.0.0.1 http://gmail.com" >> /etc/hosts && echo "Blocking 'http://gmail.com' ... Done"
-echo "127.0.0.1 https://www.gmail.com" >> /etc/hosts && echo "Blocking 'https://www.gmail.com' ... Done"
-echo "127.0.0.1 http://www.gmail.com" >> /etc/hosts && echo "Blocking 'http://www.gmail.com' ... Done"
-echo "127.0.0.1 gmail.com" >> /etc/hosts && echo "Blocking 'gmail.com' ... Done"
-echo "127.0.0.1 www.gmail.com" >> /etc/hosts && echo "Blocking 'www.gmail.com' ... Done"
-echo "127.0.0.1 https://plus.google.com" >> /etc/hosts && echo "Blocking 'https://gmail.com' ... Done"
-echo "127.0.0.1 http://plus.google.com" >> /etc/hosts && echo "Blocking 'http://gmail.com' ... Done"
-echo "127.0.0.1 https://www.plus.google.com" >> /etc/hosts && echo "Blocking 'https://www.gmail.com' ... Done"
-echo "127.0.0.1 http://www.plus.google.com" >> /etc/hosts && echo "Blocking 'http://www.gmail.com' ... Done"
-echo "127.0.0.1 plus.google.com" >> /etc/hosts && echo "Blocking 'gmail.com' ... Done"
-echo "127.0.0.1 www.plus.google.com" >> /etc/hosts && echo "Blocking 'www.plus.google.com' ... Done"
-echo "127.0.0.1 www.google-analytics.com" >> /etc/hosts && echo "Blocking 'www.google-analytics' ... Done"
-echo "127.0.0.1 google-analytics.com" >> /etc/hosts && echo "Blocking 'google-analytics.com' ... Done"
-echo "127.0.0.1 ssl.google-analytics.com" >> /etc/hosts && echo "Blocking 'ssl.google-analytics.com' ... Done"
-echo "127.0.0.1         accounts.google.com" >> /etc/hosts && echo "Blocking 'accounts.google.com' ... Done"
-echo "127.0.0.1 https://accounts.google.com" >> /etc/hosts && echo "Blocking 'https://accounts.google.com' ... Done"
-echo "127.0.0.1 goo.gl" >> /etc/hosts && echo "Blocking 'goo.gl' ... Done" #seems to work for http and https as well...#
-echo "127.0.0.1 googletagmanager.com" >> /etc/hosts && echo "Block 'googletagmanager' ... Done"
-echo "127.0.0.1         maps.google.com" >> /etc/hosts && echo "Blocking 'maps.google.com' ... Done"
-echo "127.0.0.1 youtube.com" >> /etc/hosts && echo "Blocking 'youtube.com' ... Done"
-echo "127.0.0.1 youtu.be" >> /etc/hosts && echo "Blocking 'youtu.be' ... Done"
-echo "127.0.0.1 	translate.google.com" >> /etc/hosts && echo "Blocking 'translate.google.com' ... Done"
-
-
-}
-
-function misc_blocker {
-
-echo "This will block domains by Microsoft, Apple, and others. This is meant for random domains that are also spied on."
-
-echo "127.0.0.1         microsoft.com" >> /etc/hosts && echo "Blocking 'Microsoft.com' ... Done"
-echo "127.0.0.1         apple.com" >> /etc/hosts && echo "Blocking 'apple.com' ... Done"
+        esac
 
 }
 
@@ -252,9 +553,11 @@ function reboot {
 # =====================================
 
 select choice in \
+        "Block All Domains" \
+        "Block NSA Domains" \
         "Block Facebook Domains" \
         "Block Google Domains" \
-        "Misc. Blocker" \
+        "Block Misc." \
         "Delete Faceook Account" \
         "Clean Memory" \
         "MAC Spoofer" \
@@ -270,14 +573,20 @@ select choice in \
 
 do
 case $choice in
+        "Block All Domains")
+        block all;
+        ;;
+        "Block NSA Domains")
+        block nsa;
+        ;;
         "Block Facebook Domains")
-        block_facebook;
+        block facebook;
         ;;
         "Block Google Domains")
-        block_google;
+        block google;
         ;;
-        "Misc. Blocker")
-        misc_blocker;
+        "Block Misc.")
+        block misc;
         ;;
         "Delete Facebook Account")
         delete_fb;
