@@ -510,6 +510,18 @@ fi
 
 fi
 
+	if [ -f /usr/bin/zypper ]
+	then
+	echo "========================="
+	echo "**** Running updates ****"
+	echo "========================="
+	sudo zypper update
+
+	else
+	echo "Not a Zypper based system ..."
+
+fi
+
 }
 
 function about {
