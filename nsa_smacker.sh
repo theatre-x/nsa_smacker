@@ -425,6 +425,12 @@ clear
 
 }
 
+function prism_break {
+        echo "Opening Prism-Break.org ... "
+        firefox https://prism-break.org/;
+
+}
+
 function mem_clean {
         echo "Note: You must run NSA Smacker in a root shell to use this (Try su - OR sudo bash)";
 
@@ -512,7 +518,7 @@ function about {
 
 echo "*******************************************************"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "NSA Smacker 0.0.3"
+echo "NSA Smacker 0.0.4"
 echo "NSA Smacker is meant to block domains very commonly monitored by the NSA, CIA, and others on a single GNU/Linux machine. It also does some other fancy shit."
 echo "Copyright (C) 2014 Brandon Smith"
 echo "This program is free software: you can redistribute it and/or modify"
@@ -559,6 +565,7 @@ select choice in \
         "Block Google Domains" \
         "Block Misc." \
         "Delete Faceook Account" \
+        "Visit Prism-Break" \
         "Clean Memory" \
         "MAC Spoofer" \
         "Update System" \
@@ -590,6 +597,9 @@ case $choice in
         ;;
         "Delete Facebook Account")
         delete_fb;
+        ;;
+        "Visit Prism-Break")
+        prism_break;
         ;;
         "Clean Memory")
         mem_clean;
