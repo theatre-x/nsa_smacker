@@ -16,17 +16,6 @@ How to run:
 - Make the program an executable by running "chmod +x ./nsa_smacker.sh" (Without the quotes) in the directory that NSA Smacker is in.
 - Run the program: ./nsa_smacker.sh
 
-
-
-
-
-WARNING: Do not run the "Delete Facebook Account" or "Visit Prism Break" options as root!!!
-
-
-
-
-
-
 How to undo blocks:
 
 Simply remove the domains you want to unblock from the "/etc/hosts" file.
