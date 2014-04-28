@@ -290,6 +290,7 @@ google=(
 'chrome.com'
 'chromium.org'
 'doubleclick.com'
+'doubleclick.net'
 'feedburner.com'
 'froofle.com'
 'froogle.com'
