@@ -119,6 +119,7 @@ google=(
 'google.cl'
 'google.cm'
 'google.cn'
+'googleapis.cn'
 'g.cn'
 'google.com.co'
 'google.co.cr'
@@ -322,11 +323,13 @@ google=(
 'googlesyndication.com'
 'googletagmanager.com'
 'googleusercontent.com'
+'googlevideo.com'
 'googlr.com'
 'goolge.com'
 'gooogle.com'
 'gstatic.com'
 'gtempaccount.com'
+'gvt1.com'
 'igoogle.com'
 'keyhole.com'
 'like.com'
@@ -339,26 +342,43 @@ google=(
 'youtu.be'
 'youtube.com'
 'youtubeeducation.com'
+'youtube-nocookie.com'
 'ytimg.com'
 
 # Subdomains
 'accounts.google.com'
+'appengine.google.com'
+'cloud.google.com'
 'code.google.com'
+'developers.google.com'
 'encrypted.google.com'
+'google-public-dns-a.google.com'
 'maps.google.com'
 'ns1.google.com'
 'ns2.google.com'
 'ns3.google.com'
 'ns4.google.com'
 'plus.google.com'
+'plus.url.google.com'
 'translate.google.com'
+'url.google.com'
 
 );
 
 misc=(
 
 'apple.com'
+
+# Microsoft
+'asp.net'
+'iis.net'
 'microsoft.com'
+'msdn.microsoft.com'
+'ns1.msft.net'
+'ns2.msft.net'
+'ns3.msft.net'
+'ns4.msft.net'
+'ns5.msft.net'
 
 );
 
