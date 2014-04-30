@@ -440,15 +440,38 @@ case $1 in
 
 function delete_fb {
 
+FILE="/tmp/out.$$"
+GREP="/bin/grep"
+
+# Make sure root can NOT execute this
+
+if [[ $EUID -ne 1000 ]]; then
+   echo "You are root. Not happening sport." 1>&2
+   exit 1
+fi
+
 echo "Opening permanent delete URL ... "
-firefox https://www.facebook.com/help/delete_account;
-clear
+firefox https://www.facebook.com/help/delete_account
 
 }
 
 function prism_break {
+
+FILE="/tmp/out.$$"
+GREP="/bin/grep"
+
+# Make sure root can NOT execute this
+
+if [[ $EUID -ne 1000 ]]; then
+   echo "AHAHAHAHAHAHA.... No." 1>&2
+   exit 1
+
+else
+
         echo "Opening Prism-Break.org ... "
-        firefox https://prism-break.org/;
+        firefox https://prism-break.org/
+
+fi
 
 }
 
