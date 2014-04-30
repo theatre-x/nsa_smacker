@@ -9,3 +9,9 @@
 - Make choice for using random generated MAC, manual entry, or bailing out
 - Make choice for downloading iproute2
 - Automatic detection of connected interfaces
+
+<b> View sites </b>
+
+- Add Google account deletion option
+- Prevent root from execution options 6 and 7 [DONE]
+- Block sites that are known for tracking cookies
