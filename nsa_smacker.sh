@@ -448,10 +448,13 @@ GREP="/bin/grep"
 if [[ $EUID -ne 1000 ]]; then
    echo "AHAHAHA, you have no power here root." 1>&2
    exit 1
-fi
+
+else
 
 echo "Opening permanent delete URL ... "
 firefox https://www.facebook.com/help/delete_account
+
+fi
 
 }
 
