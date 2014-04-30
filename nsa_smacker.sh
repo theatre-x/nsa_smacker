@@ -441,14 +441,14 @@ case $1 in
 function delete_fb {
 
 echo "Opening permanent delete URL ... "
-sudo -u \#1000 firefox https://www.facebook.com/help/delete_account;
+firefox https://www.facebook.com/help/delete_account;
 clear
 
 }
 
 function prism_break {
         echo "Opening Prism-Break.org ... "
-        sudo -u \#1000 firefox https://prism-break.org/;
+        firefox https://prism-break.org/;
 
 }
 
