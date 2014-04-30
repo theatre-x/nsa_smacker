@@ -446,7 +446,7 @@ GREP="/bin/grep"
 # Make sure root can NOT execute this
 
 if [[ $EUID -ne 1000 ]]; then
-   echo "You are root. Not happening sport." 1>&2
+   echo "AHAHAHA, you have no power here root." 1>&2
    exit 1
 fi
 
@@ -463,7 +463,7 @@ GREP="/bin/grep"
 # Make sure root can NOT execute this
 
 if [[ $EUID -ne 1000 ]]; then
-   echo "AHAHAHAHAHAHA.... No." 1>&2
+   echo "AHAHAHA, you have no power here root." 1>&2
    exit 1
 
 else
