@@ -616,7 +616,7 @@ select choice in \
         "Block Facebook Domains" \
         "Block Google Domains" \
         "Block Misc." \
-        "Delete Faceook Account" \
+        "Delete Facebook Account" \
         "Visit Prism-Break" \
         "Clean Memory" \
         "MAC Spoofer" \
