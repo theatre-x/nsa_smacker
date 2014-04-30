@@ -20,18 +20,6 @@
 
 clear
 
-# ====================
-# Is the user root?
-# ====================
-
-FILE="/tmp/out.$$"
-GREP="/bin/grep"
-
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root because the /etc/hosts file requires root access in order to write into it. You can do this by typing 'sudo bash' or 'su -'." 1>&2
-   exit 1
-fi
-
 # ==================
 # Greeting
 # ==================
