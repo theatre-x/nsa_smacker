@@ -16,3 +16,7 @@
 - Prevent root from execution options 6 and 7 [DONE]
 - Block sites that are known for tracking cookies
 - Let user's default browser launch instead of just Firefox
+
+<b> BSD </b>
+
+- Test on BSD systems
