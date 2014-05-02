@@ -358,6 +358,7 @@ google=(
 'ns4.google.com'
 'plus.google.com'
 'plus.url.google.com'
+'s.ytimg.com'
 'translate.google.com'
 'url.google.com'
 
@@ -368,6 +369,7 @@ misc=(
 'apple.com'
 
 # Microsoft
+'answers.microsoft.com'
 'asp.net'
 'iis.net'
 'microsoft.com'
@@ -377,6 +379,9 @@ misc=(
 'ns3.msft.net'
 'ns4.msft.net'
 'ns5.msft.net'
+'social.msdn.microsoft.com'
+'support.microsoft.com'
+'technet.microsoft.com'
 
 );
 
