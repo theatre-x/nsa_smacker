@@ -345,6 +345,7 @@ google=(
 
 # Subdomains
 'accounts.google.com'
+'ajax.googleapis.com'
 'appengine.google.com'
 'cloud.google.com'
 'code.google.com'
@@ -358,6 +359,7 @@ google=(
 'ns4.google.com'
 'plus.google.com'
 'plus.url.google.com'
+'safebrowsing-cache.google.com'
 'translate.google.com'
 'url.google.com'
 
@@ -377,6 +379,7 @@ misc=(
 'ns3.msft.net'
 'ns4.msft.net'
 'ns5.msft.net'
+'technet.microsoft.com'
 
 );
 
