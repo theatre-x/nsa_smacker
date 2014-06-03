@@ -422,7 +422,6 @@ case $1 in
         done
         ;;
         facebook)
-        echo "Blocking access to every domain of NSA loving dickheads have in every single combination possible..."
         echo "Blocking all Facebook domains ... "
         for i in "${facebook[@]}"
         do
