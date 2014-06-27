@@ -383,13 +383,159 @@ misc=(
 
 );
 
+scam=(
+
+'09ec.com'
+'Adidasjerseys.com'
+'Ajshoesusa.com'
+'Alotfashion.com'
+'B2bnikeshoes.com'
+'B2ctradecn.com'
+'Babywomen.com'
+'Bags-cheap-wholesale.com'
+'Brandshoesec.com'
+'Brandshoeswhole.com'
+'Brandtradezone.com'
+'Brandunsale.com'
+'Buytopshoes.com'
+'Cheap-hot.com'
+'Cheap-sneaker86.com'
+'Cheapaaa.com'
+'Cheapchinajordans.com'
+'Cheapchinashoes.com'
+'Cheapnikeb2b.com'
+'Cheapnikeoutlet.com'
+'Cheapnikesneaker.com'
+'Cheapshoesaaa.com'
+'Cheapshoescity.com'
+'Cheapsneaker86.com'
+'China-nike2008.com'
+'Clothesb2b.com'
+'Cnnikebrand.com'
+'Coolshoesplus.com'
+'Dayiele.com'
+'Directshoppingusa.com'
+'Discountjordanssneaker.com'
+'Ectop21.com'
+'Endshoes.com'
+'Fashion-123.com'
+'Fashionleftonsale.com'
+'Fashionvoid.com'
+'Fashionwinds.com'
+'Hkdongwei.com'
+'Honestytrade.com'
+'Hy6782008.com'
+'Jerseyb2b.com'
+'Jordan-cheap.com'
+'Jordanhot.com'
+'Jordanvipshoes.com'
+'Kicksclassic.com'
+'Lightningshoestrade.com'
+'Listshoes.com'
+'Loginnike.com'
+'Madeinchina-shop.com'
+'Mineshoes.com'
+'Myshoesclothes.com'
+'Nfl-mlb-nba-shop.com'
+'Nike-brand.com'
+'Nike-ec.com'
+'Nike-shoesaaa.com'
+'Nike-won.com'
+'Nikecnshoes.com'
+'Nikeconfluence.com'
+'Nikeec.com'
+'Nikegoon.com'
+'Nikejordan-shoes.com'
+'Nikejordanaaa.com'
+'Nikelead.com'
+'Nikenbasportshoes.com'
+'Nikeobama.com'
+'Nikepioneer.com'
+'Nikepreview.com'
+'Nikeqs.com'
+'Nikesc.com'
+'Nikeshoemarket.com'
+'Nikeshoes86.com'
+'Nikeshoes98.com'
+'Nikeshoesbase.com'
+'Nikeshoescity.com'
+'Nikeshoescn.com'
+'Nikeshoesmake.com'
+'Nikeshoesmarket.com'
+'Nikeshoesorg.com'
+'Nikeshoespick.com'
+'Nikeshoesretro.com'
+'Nikeshoesshoppe.com'
+'Nikeshoesshow.com'
+'Nikeshoesvogue.com'
+'Nikeshoeswhole.com'
+'Nikeshoeswon.com'
+'Nikestockcn.com'
+'Nikeun2008.com'
+'Nikeusashoes.com'
+'Nikewon.com'
+'Ok-nike.com'
+'Order-cn.com'
+'Overstockes.com'
+'Pickyournewshoes.com'
+'Pickyourpurses.com'
+'Pickyourshoes123.com'
+'Pickyourtrade.com'
+'Putianshoesnet.com'
+'Reeboknhl.com'
+'Retailsneaker.com'
+'Rs-pay.com'
+'Salebrandsneakers.com'
+'Salesneaker.com'
+'Sandic.com'
+'Sell-nike-shoes.com'
+'Selljordan7.com'
+'Sellsniker.com'
+'Shajazma1.com'
+'Shoes-2008.com'
+'Shoes-base.com'
+'Shoes196.com'
+'Shoes808.com'
+'Shoesclassic.com'
+'Shoesgoogle.com'
+'Shoesgoon.com'
+'Shoesnikedunks.com'
+'Shoespaypal.com'
+'Shoestoptown.com'
+'Shoestrade-ec.com'
+'Shopapair.com'
+'Sneaker100.com'
+'Sneakercheap.com'
+'Sneakermonger.com'
+'Sports196.com'
+'Tideshoes.com'
+'Tradewhole.com'
+'Uggwhole.com'
+'Usaaj.com'
+'Usajordans.com'
+'Usd-usd.com'
+'Whole-nike.com'
+'Whole-shoes.com'
+'Wholenike.com'
+'Wholesale-nike-sneaker.com'
+'Wholesale86.com'
+'Wholesale89.com'
+'Wholesalecheapshoes.com'
+'Wholesalesneaker86.com'
+'Wholesalesneakercn.com'
+'Winwinltd.com'
+'Xingshunelec.com'
+'Xselectron.com'
+
+);
+
 # =================
 # Meta categories
 # =================
 # Categories of categories ...
 
 # All domain names available.
-all=("${nsa[@]}" "${facebook[@]}" "${google[@]}" "${misc[@]}")
+all=("${nsa[@]}" "${facebook[@]}" "${google[@]}" "${misc[@]}" "${scam[@]}")
 
 
 # =================
@@ -439,6 +585,13 @@ case $1 in
         echo "This will block domains by Microsoft, Apple, and others. This is meant for random domains that are also spied on."
         echo "Blocking miscellaneous domains ... "
         for i in "${misc[@]}"
+        do
+            execute_block $i;
+        done
+        ;;
+        scam)
+        echo "Blocking known scam sites ... "
+        for i in "${scam[@]}"
         do
             execute_block $i;
         done
@@ -608,7 +761,7 @@ function about {
 
 echo "*******************************************************"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "NSA Smacker 0.0.4"
+echo "NSA Smacker 0.0.5"
 echo "NSA Smacker is meant to block domains very commonly monitored by the NSA, CIA, and others on a single GNU/Linux machine. It also does some other fancy shit."
 echo "Copyright (C) 2014 Brandon Smith"
 echo "This program is free software: you can redistribute it and/or modify"
@@ -654,6 +807,7 @@ select choice in \
         "Block Facebook Domains" \
         "Block Google Domains" \
         "Block Misc." \
+        "Block Scam Sites" \
         "Delete Facebook Account" \
         "Visit Prism-Break" \
         "Clean Memory" \
@@ -684,6 +838,9 @@ case $choice in
         ;;
         "Block Misc.")
         block misc;
+        ;;
+        "Block Scam Sites")
+        block scam;
         ;;
         "Delete Facebook Account")
         delete_fb;
