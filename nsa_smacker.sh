@@ -367,6 +367,7 @@ google=(
 
 misc=(
 
+# Apple
 'apple.com'
 
 # Microsoft
@@ -380,6 +381,9 @@ misc=(
 'ns4.msft.net'
 'ns5.msft.net'
 'technet.microsoft.com'
+
+# Instagram
+'instagram.com'
 
 );
 
